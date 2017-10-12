@@ -49,17 +49,17 @@ class QosConflict(nexception.InvalidInput):
     message = _("A Qos of the same direction is already set with the target")
 
 
-class QosRateTooSmall(nexception.NeutronException):
+class QosRateTooSmall(nexception.Conflict):
     message = _("Rate %(rate)s of qos %(id)s is too small to afford "
                 "its queues.")
 
 
-class QosQueueRateTooSmall(nexception.NeutronException):
+class QosQueueRateTooSmall(nexception.Conflict):
     message = _("Rate %(rate)s of qos queue %(id)s is too small to afford "
                 "its subqueues.")
 
 
-class QosQueueNotInQos(nexception.NeutronException):
+class QosQueueNotInQos(nexception.InvalidInput):
     message = _("Qos queue %(qos_queue_id)s is not in Qos %(qos_id)s.")
 
 
